@@ -1933,14 +1933,7 @@ This sample application is based on [Christophe Coenraets](http://coenraets.org/
 Questions, feedbacks and ideas ?
 --------------------------------
 
-If you have got any questions, feedbacks or ideas, please feel free to contact us via one of these channels:
-
-[google forum](#):  for technical discussions, newbie questions...etc, come and join the community.
-
-[github issues](#): for problems and bugs found in the source code.
-
-[email](#): for anything that doesn't fit in aforementioned sites.
-
+If you have got any questions, feedbacks or ideas, please feel free create new issues. 
 
 Aside from that, all source code are available on [github](https://github.com/devmatters/backbone.rocks), feel free to fork and send over pull requests.
 
