@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width">
+
+  <title>Your Project</title>
+
+  <!-- Flatdoc -->
+  <script src="libs/jquery-1.9.1.js"></script>
+  <script src='libs/flatdoc.js'></script>
+
+  <!-- Flatdoc theme -->
+  <link  href='libs/flatdoc/theme-white/style.css' rel='stylesheet'>
+  <!-- 
+  jx: 這個要啟用，只是為了方便測試先關掉
+  <script src='libs/flatdoc/theme-white/script.js'></script> 
+  -->
+
+  <!-- Meta -->
+  <meta content="Your Project" property="og:title">
+  <meta content="Your Project description goes here." name="description">
+
+  <!-- Initializer -->
+  <script>
+    // Flatdoc.run({
+    //   fetcher: Flatdoc.github('USER/REPO')
+    // });
+  
+    // 剝掉不必要的 elem，減少 menu 的 indent 數量
+    $(document).on("flatdoc:ready", function(){
+      console.log( 'run' );
+      $('.menu.section').html($('#root-list') );
+    })
+    
+    // kick start
+    Flatdoc.run({
+      fetcher: Flatdoc.file('walkthrough.md ')
+    });
+
+
+  </script>
+</head>
+
+<body role='flatdoc' class='no-literate large-brief'>
+
+  <div class='content-root'>
+    <div class='menubar'>
+      <div class='menu section' role='flatdoc-menu'></div>
+    </div>
+    <div role='flatdoc-content' class='content'></div>
+  </div>
+
+</body>
+</html>

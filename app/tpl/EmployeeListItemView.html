@@ -1,0 +1,8 @@
+<!-- 用於 List 裏的 item renderer 
+它對應的 EmployeeListItemView.js 裏的基底 elm 是 <li>，將來塞入 EmployeeListView 的 <ul> 就正好組成 List
+-->
+<a id="EmployeeListItemView" href='#employees/<%= id %>'>
+    <img src="pics/<%= firstName %>_<%= lastName %>50.jpg" 
+    	class="employee-thumbs" />
+    <p class="list-item"><%= firstName %> <%= lastName %><br /><%= title %></p>
+</a>

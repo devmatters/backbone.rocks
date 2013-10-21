@@ -1,0 +1,63 @@
+<!-- 大頭照 + 主資訊區，通常位於頁面最上方，或左方 
+
+_i18n.manager 這種是 polyglot 的語系字串，偷塞在 vo._i18n 傳進來
+-->
+
+<!-- 大頭照 -->
+<div id="headShot">
+    <img src="pics/<%= firstName %>_<%= lastName %>.jpg" width="160" height="160"/>
+
+    <div id="progressBar" class="progress progress-striped progress-success progress-bar" >
+        <div class="bar" style="width: 0;"></div>
+    </div>
+</div>
+
+<br>
+
+<input id="headShotInput" type="file" style="display:none;" />
+
+<!-- 姓名 -->
+<h3 id="employeeName"><%= firstName %> <%= lastName %></h3>
+
+<br>
+
+<!-- 職稱 -->
+<h4 id="title" ><%= title %></h4>
+
+<br>
+<br>
+        <!-- 五列表格，顯示 phone, email, twitter 等資訊 -->
+        <table class="table table-striped">
+            <%
+            if (managerId)
+            {
+            %>
+            <tr>
+                <td><%= _i18n.manager %>:</td>
+                <td><i class="icon-user"></i> <a id="managerName" href='#employees/<%= managerId %>'> <%= managerName %></a></td>
+            </tr>
+            <%
+            }
+            %>
+            <tr>
+                <td><%= _i18n.office_phone %>:</td>
+                <td><i class="icon-home"></i><span id="officePhone" class="control-group error" > <%= officePhone %></span></td>
+            </tr>
+            <tr>
+                <td><%= _i18n.cell_phone %>:</td>
+                <td><i class="icon-headphones"></i><span id="cellPhone" > <%= cellPhone %><span></td>
+            </tr>
+            <tr>
+                <td><%= _i18n.email %>:</td>
+                <td><i class="icon-envelope"></i> <a id="email" href="mailto:<%= email %>"><%= email %></a></td>
+            </tr>
+            <tr>
+                <td><%= _i18n.twitter %>:</td>
+                <td><i class="icon-retweet"></i> <a id="twitterId" href=""><%= twitterId %></a></td>
+            </tr>
+        </table>
+
+        <div class="alert alert-warning" style="display:none;">
+          <h4 class="alert-heading">Warning</h4>
+          The phone numbers, email addresses, and Twitter handlers are fake.
+        </div>

@@ -1,0 +1,289 @@
+body {
+    font-family: source-sans-pro, sans-serif;
+    font-size: 15px;
+    box-sizing: border-box;
+    min-width: 362px;
+}
+
+footer{
+    margin-bottom: 40px;
+}
+
+.dropdown-menu {
+    max-height: 400px;
+    overflow: auto;
+    width: 230px;
+}
+
+.list-item {
+    padding-top: 6px;
+    padding-left: 56px;
+}
+
+.no-reports {
+    display: none;
+}
+
+/* 大標題，放大字體與變粗 */
+.hero22 {
+    padding: 20px;
+    margin-bottom: 30px;
+    font-size: 18px;
+    font-weight: 200;
+    line-height: 30px;
+    color: inherit;
+    border: 1px solid #dddddd;
+    /* background-color: #fbefca; */
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+}
+
+/* 
+    direct reports list 中每個 list item renderer 的樣式
+ */
+.employee-thumbs{
+    float: left;
+    margin-right: 10px;
+
+    width: 50px;
+    height: 50px;
+}
+
+.table-header{
+    background-color: #c1c1c1;
+    color: white;
+    font-weight: bold;
+}
+
+/* 
+希望讓 table 每個 row 在 mouse over 時，cursor 都變成手指圖示
+ */
+.table-hover tbody{
+    cursor: pointer;
+}
+
+.row-mousedown{
+    font-weight: bold;
+}
+
+
+/* 
+
+覆寫 bootstrap 樣式
+jxadded, 讓單數分頁鈕，寬度跟雙數時一樣，並且文字水平置中
+
+*/
+.pagination{
+    margin-top: 0;
+    margin-left: 0;
+    margin-bottom: 0;
+}
+.pagination ul > li > a,
+.pagination ul > li > span {
+  min-width: 16px; 
+  text-align: center;
+}
+
+/* 
+讓 h3, p 等 elem 從 block 變成 inline-block
+方便我套 hover 換 cursor
+ */
+.editfield-base {
+    display:inline-block;
+    
+    /* 移除 x-editable 加上的虛線 */
+    border: none !important;
+
+
+    /* width: 100%; */
+    /* background-color: rgba(255, 255, 0, 0.2); */
+}
+
+.editfield:after {
+    display: inline-block;
+    color: rgba(0, 0, 0, 0);
+    position: absolute;
+    width: 19px;    /* pen 圖示大小為 18px */
+    content:'00';
+    background: url(../assets/images/pen.png) 0 50% no-repeat;
+    margin-left: 10px;
+    background-size: 18px;
+
+    /* debug 
+    outline: 1px solid red;
+    */
+}
+
+/* :hover 是大家共用的 */
+.editfield:hover, .editbox:hover, .imgfield:hover {
+    cursor: pointer;
+}
+
+/* 專門給 direct reports 的 x-editable 用 */
+.editbox-base {
+    /* 移除 x-editable 加上的虛線 */
+    border: none !important;
+}
+
+.editbox:before {
+    display: inline-block;
+    color: rgba(0, 0, 0, 0);
+    float: right;
+    margin-top: 28px;
+
+    width: 19px;    /* pen 圖示大小為 18px */
+    content:'00';
+    background: url(../assets/images/pen.png) 0 100% no-repeat;
+    background-size: 18px;
+
+    /* debug 
+    outline: 1px solid red;
+    */
+}
+
+
+.edit-button{
+    /* float: right;
+    min-width: 90px;
+    margin-right: 30px;
+    margin-left: 180px; */
+    position: absolute;
+    top: 70px;
+    right: 112px;
+}
+
+/* 
+image 上傳用的
+ */
+.imgfield:before {
+    display: inline-block;
+    color: rgba(0, 0, 0, 0);
+    float:right;
+    width: 19px;    /* pen 圖示大小為 18px */
+    content:'00';
+    background-image: url(../assets/images/pen.png);
+    background-position: 0px 1px;
+    background-repeat: no-repeat;
+    margin-left: 10px;
+    background-size: 18px;
+
+    /* debug 
+    outline: 1px solid red;
+    */
+}
+
+/**
+ * 上傳頭像的假 progress bar
+ */
+.progress-bar{
+    width: 120px;
+    position: relative;
+    left: 20px;
+    bottom: 80px;
+    display: none;
+}
+
+/**
+ * 重要：這是為了控制 TitleBarView 裏的 search box 每次只顯示三筆資料而加的
+ * 但這樣寫會影響所有 select2 元件，因此實驗完就關掉，將來不需要用
+ */
+.select2-results{
+    /* max-height: 73px; */
+}
+
+/**
+ * 出錯的 form 欄位標上紅框
+ */
+.jx-error{
+    outline: 2px solid red;
+}
+
+.lang-switch{
+    display: inline-block;
+    margin-right: 10px;
+    padding-top: 9px;
+}
+
+input[type="button"].bigger-button{
+    width: 90px;
+}
+
+#btnRemove{
+    margin-right: 10px;
+}
+
+ /* -----------------------------------------------------------------------
+  
+ 開始 RWD 區段 
+ 
+ ----------------------------------------------------------------------- */
+
+/* destkop */
+@media (min-width: 980px) {
+
+    body{
+        padding-top: 60px;
+    }
+
+    .select2-container{
+        float: right;
+        line-height: 100%;
+        margin-top: 5px;
+    }
+}
+
+
+/* tablet */
+@media (min-width: 768px) and (max-width: 979px) {
+    .lang-switch {
+        display: block;
+        margin-left: 10px;
+        padding-top: 10px;
+        float: none;
+    }
+
+    .select2-container{
+        padding-left: 10px;
+    }
+
+    .edit-button{
+        position: absolute;
+        top: 70px;
+        right: 112px;
+    }
+
+}
+
+
+/* phone */
+@media (max-width: 767px) {
+
+    .lang-switch {
+        display: block;
+        margin-left: 10px;
+        padding-top: 10px;
+        float: none;
+    }
+
+    .select2-container{
+        padding-left: 10px;
+    }
+
+    #btnAdd {
+        width: 94%;
+    }
+
+    #bootpag{
+        width: 100%;
+        text-align: center;
+        padding-top: 20px;
+    }
+
+    .edit-button{
+
+        position: absolute;
+        top: 70px;
+        right: 12px;
+    }
+}

@@ -1,0 +1,60 @@
+<!-- Direct Report 區段 
+
+因為有 .no-reports 樣式，因此預設看不到
+-->
+
+<div id="alertEditFaild" class="alert alert-error">
+  <!-- <button type="button" class="close" data-dismiss="alert">&times;</button> -->
+  <strong>儲存失敗！</strong> 請檢查所有欄位後再試一次。
+</div>
+
+
+<!-- remove, edit|save buttons -->
+<div class="edit-button">
+    
+    <input id="btnRemove" type='button' value="<%= _i18n.btn_remove %>" 
+        class='btn btn-danger' >
+
+    <input id="btnEdit" type='button' value="<%= _i18n.btn_edit %>" 
+            class='btn btn-default bigger-button' data-toggle="button" >
+    
+</div>
+
+<!-- 主資料區(頭像、姓名、職稱、電話...) -->
+<div id="details" class="span7"></div>
+
+
+<!-- direct reports 顯示區 -->
+<div class="span5">
+    
+    <!-- 這一區放 direct reports，是另外塞一個 List 元件進來  -->
+    <div id="reports" data-key="reports" class="well">
+
+    	<!-- report 區大標題 -->
+        <h3 class="modal-header"><%= _i18n.direct_reports %></h3>
+	
+		<!-- 如果此人沒有 reports 時才會顯示 -->
+        <div class="alert alert-info no-reports">
+            <h4 class="alert-heading"><%= _i18n.info %></h4>
+            <%= firstName %> <%= lastName %> <%= _i18n.has_no_direct_reports %>
+        </div>
+
+        <!-- ↓ 下面將來會 $.append() 進來一個 List view，它的母容器是 <ul> -->
+
+    </div>
+</div>
+
+<!-- confirmation modal window for removal  -->
+<div id="myModal" class="modal hide fade">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+    <h3><%= _i18n.title_remove %></h3>
+  </div>
+  <div class="modal-body">
+    <p><%= _i18n.msg_remove %></p>
+  </div>
+  <div class="modal-footer">
+    <a id="btnCancel" href="#" class="btn btn-primary"><%= _i18n.label_cancel %></a>
+    <a id="btnConfirm" href="#" class="btn btn-danger"><%= _i18n.label_delete %></a>
+  </div>
+</div>

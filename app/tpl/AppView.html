@@ -1,0 +1,20 @@
+<!-- 
+    這是整支程式的「框」
+    內容物是空的，將來會不斷在 content 這個 div 裏抽換 sub-view
+-->
+<div id="AppView" class="container">
+    <div class="row-fluid">
+        <!-- 
+            這裏才是真正放 sub-view 的地方
+            在 #content 前方會塞一個 TitleBar view 裏面是導覽系統與 search box
+         -->
+        <div id="content" class="span12" ></div>
+    </div>
+
+    <hr>
+
+    <footer>
+        <p><!-- &copy; Backbone.Rocks 2013. --> <%= _i18n.app_name %> <%= _i18n.app_copyright_year %> <a href="https://twitter.com/thebackbonrocks"><%= _i18n.app_twitter %></a></p>
+    </footer>
+
+</div>

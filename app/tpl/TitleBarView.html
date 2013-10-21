@@ -1,0 +1,60 @@
+<div id="TitleBarView" class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            
+            <!-- bootstrap RWD 小版時用的選單按鈕，通過 data-target 指向下方 .nav-collaps -->
+            <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <!-- 三個 span 代表按鈕裏會有三條線，哪個白癡想出來的設計 -->
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <!-- logo -->
+            <a class="brand" href="#"><%= _i18n.app_title %></a>
+
+            <div class="nav-collapse collapse">
+                
+                <!-- 主導覽系統 - 2 個大按鈕 -->
+                <ul class="nav">
+                    <li class="home-menu active"><a href="#"><%= _i18n.ui_home %></a></li>
+
+                    <!-- 
+                        注意這裏有玄機：按下這個鈕，它會造成 location 值改變
+                        這會觸發 backbone.router 的事件，進而執行 router.contact() 去換新的 view
+                        這是為何我在 shell.js 的 events{} 裏找不到相應的偵聽與處理
+                     -->
+                    <li class="contact-menu"><a href="#contact"><%= _i18n.ui_contact %></a></li>
+                </ul>
+                
+
+
+                <!-- 
+                <div id="searchBox" class="select2-container navbar-search pull-right dropdown" style="width:300px;">
+                    <input id="searchText" type="search" class="search-query dropdown-toggle" placeholder="查找" autocomplete="off"> 
+                </div>
+                -->
+
+                <input id="searchBox" type="hidden" style="width:260px;" tabindex="-1" class="select2-offscreen">
+
+                <!-- <form class="navbar-search pull-right dropdown">
+                    <input id="searchText" type="search" class="search-query dropdown-toggle" placeholder="查找" autocomplete="off">
+                </form> -->
+
+                <div id="langSwitch" class="dropdown lang-switch pull-right">
+
+                <a class="dropdown-toggle" href="#" >選擇語系<b class="caret"></b></a>
+
+                  <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+                    <!-- 寫 href="javascript: void(0)" 是希望出現手指圖示，代表可點選 -->
+                  </ul>
+                </div>
+            
+
+            </div>
+            <!--/.nav-collapse -->
+
+
+        </div>
+    </div>
+</div>

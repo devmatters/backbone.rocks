@@ -1,0 +1,50 @@
+<div id="HomeView" class="hero2" style="">
+    <div class="row-fluid">
+    
+        <h3>Backbone.Rocks Examples - Employee Listings</h3>
+        
+        <!-- search box -->
+        <div class="input-append pull-right">
+            <input id="inputSearch" class="" type="text" placeholder="<%= _i18n.msg_enter_keyword %>">
+
+            <input id="btnSearch" class="btn" type="button" value="<%= _i18n.btn_search %>">
+        </div>
+
+        <!-- 插入 HomeListingView.html main listing table -->
+        <div id="mainListing"></div>
+        
+
+
+        <!-- add button 與 pagination -->
+        <div class="">
+
+            <div id="btnAdd" class="btn btn-primary pull-left"><%= _i18n.btn_create %></div>  
+            
+            <!-- <div id="btnRemove" class="btn btn-danger span2">Remove</div>   -->
+            
+            <!-- 
+                使用 jquery.bootpag 元件
+             -->
+            <div id="bootpag" class="pull-right"></div>  
+            
+
+            <!-- 
+            測試 editable 用的
+            <input type="text" id="username"> 
+            -->
+
+            <!-- 
+                # 使用 jq-pagination 元件
+            <div id="paginator" class="jq-pagination">
+                <a href="#" class="first" data-action="first">&laquo;</a>
+                <a href="#" class="previous" data-action="previous">&lsaquo;</a>
+                <input type="text" readonly="readonly" data-max-page="40" />
+                <a href="#" class="next" data-action="next">&rsaquo;</a>
+                <a href="#" class="last" data-action="last">&raquo;</a>
+            </div>
+            -->
+
+        </div>
+
+    </div>
+</div>
