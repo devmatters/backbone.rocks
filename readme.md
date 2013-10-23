@@ -1,3 +1,8 @@
+Update
+======
+
+The [slide deck](http://goo.gl/LlqlFa) from my #html5devconf session "Backbone.rocks - Large scale single page app done right" is up.
+
 Walkthrough
 ===========
 
