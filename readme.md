@@ -1906,7 +1906,7 @@ Where to go from here ?
 
 Congratulations on finish reading the whole guide (you did read it cover to cover, didn't you ?), so what to go from here ? Here are some suggestions.
 
-1. As a mature developer, once you leanred the core concepts, approaches and best practices illustrated in this guide, you should be able to apply the same methodology to other languages or frameworks, like Angularjs or Ember. 
+1. As a mature developer, once you learned the core concepts, approaches and best practices illustrated in this guide, you should be able to apply the same methodology to other languages or frameworks, like Angularjs or Ember. 
 
 2. You can replace the UI layer with ExtJS, Sencha, Jquery Mobile, Rachet or any other UI components that fits your needs.
 
